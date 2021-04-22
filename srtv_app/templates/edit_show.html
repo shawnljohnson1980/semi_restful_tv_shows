@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>New Show</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alex+Brush">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Off-Canvas-Sidebar-Drawer-Navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body>
+    <section></section>
+    <h1 class="text-center shadow"
+        style="font-family: 'Alex Brush', serif;font-style: italic;font-weight: bold;font-size: 49px;">Edit your show
+    </h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <form class="border rounded border-dark shadow p-5" method="post" action="/shows/{{ show.id }}/edit">
+                    <div class="form-group text-left"><label>Title</label><input
+                            class="shadow form-control form-control-lg" type="text" placeholder="show title"
+                            name="title">
+                    </div>
+                    <div class="form-group text-left d-inline-block ml-5 mr-5"><label
+                            class="text-left">Network</label><input class="shadow form-control form-control-lg"
+                            type="text" placeholder="{{show.network}}" name="network">
+                    </div>
+                    <div class="form-group d-inline-block mr-5"><label class="mt-5">Release Date</label>
+                        <input class="shadow form-control form-control-lg" name="release_date" type="date">
+                    </div>
+                    <div class="form-group mt-5"><label class="mt-2">Description</label><textarea
+                            class="shadow form-control d-inline-block float-none" name="description"
+                            placeholder="Describe your show" rows="7" cols="30"></textarea>
+                    </div>
+                    <div class="form-group text-center mt-5">
+                        <button class="btn btn-secondary btn-lg shadow" type="submit">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-light fixed-top text-secondary bg-dark text-center shadow off-canvas"
+        data-right-drawer="0" data-open-drawer="1"
+        style="color: var(--gray);background: linear-gradient(-130deg, var(--blue), white 77%);">
+        <div class="container flex-column"><button class="btn btn-dark drawer-knob" type="button" data-open="drawer"><i
+                    class="fas fa-bars"></i></button>
+            <div class="d-flex justify-content-between brand-line"><a class="navbar-brand text-danger"
+                    href="/">Semi-Restful</a><button class="btn text-danger" type="button" data-dismiss="drawer"><span
+                        class="sr-only">Toggle Navigation&nbsp;</span><i class="fas fa-times"></i></button></div>
+            <ul class="navbar-nav flex-column drawer-menu">
+                <li class="nav-item"><a class="nav-link active text-danger" href="#">Create Show</a></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="#"></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+            </ul>
+            <ul class="navbar-nav flex-column bottom-nav">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="before">
+        <p>{{show.id}}</p>
+        <p>{{show.title}}</p>
+        <p>{{show.network}}</p>
+        <p>{{show.release_date}}</p>
+        <p>{{show.description}}</p>
+    </div>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="{% static 'assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js' %}"></script>
+    <script src="{% static 'assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js' %}"></script>
+</body>
+
+</html>

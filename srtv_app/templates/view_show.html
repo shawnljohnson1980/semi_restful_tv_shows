@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>semi_restful_tv_shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alex+Brush">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Off-Canvas-Sidebar-Drawer-Navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light fixed-top text-secondary bg-dark text-center shadow off-canvas"
+        data-right-drawer="0" data-open-drawer="1"
+        style="color: var(--gray);background: linear-gradient(-130deg, var(--blue), white 77%);">
+        <div class="container flex-column"><button class="btn btn-dark drawer-knob" type="button" data-open="drawer"><i
+                    class="fas fa-bars"></i></button>
+            <div class="d-flex justify-content-between brand-line"><a class="navbar-brand text-danger"
+                    href="'/'">Semi-Restful</a><button class="btn text-danger" type="button" data-dismiss="drawer"><span
+                        class="sr-only">Toggle Navigation&nbsp;</span><i class="fas fa-times"></i></button></div>
+            <ul class="navbar-nav flex-column drawer-menu">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="/">Home</a><a class="nav-link text-danger"
+                        href="/shows/new">Create Show</a><a class="nav-link text-danger" href="#"></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+            </ul>
+            <ul class="navbar-nav flex-column bottom-nav">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="text-center">{{ show.id[3] }}</h1>
+    <section></section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="mt-5">Title: {{ show.title }}</h3>
+                <h3>Network: {{ show.network }} </h3>
+                <h3>Release Date: {{ show.release_date }}</h3>
+                <h3>Description</h3>
+                <h5>{{ show.description }}</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-5 |">
+                <h4>Last Updated at {{ show.updated_at }}</h4>
+                <a class="ml-1" href="/shows/{{ show.id }}/edit_show">Edit </a> |
+                <a class="ml-1" href="/shows/{{ show.id }}/delete"> Delete</a>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="{% static 'assets/js/Off-Canvas-Sidebar-Drawer-Navbar.js' %}"></script>
+    <script src="{% static 'assets/js/Off-Canvas-Sidebar-Drawer-Navbar-1.js' %}"></script>
+</body>
+
+</html>
